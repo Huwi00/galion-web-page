@@ -12,7 +12,7 @@ const slides = [
 ];
 
 const SLIDE_INTERVAL = 6500;
-const titleWords = ['zgrzyt', 'fal,', 'zapach', 'drewna', 'i', 'cisza.'];
+const titleWords = ['urok', 'zapach', 'drewna', 'i', 'cisza.'];
 
 function Header() {
     const [active, setActive] = useState(0);
