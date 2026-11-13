@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, inView, stagger } from '../../lib/motion';
+import Captain from './captain';
 import './contact.css';
 
 const EMAIL = 'kontakt@domkigalion.pl';
@@ -14,6 +15,9 @@ function Contact() {
     return (
         <section id="kontakt" className="section contact">
             <motion.div className="container contact-info" variants={stagger()} {...inView}>
+                <div className="captain-wrap">
+                    <Captain />
+                </div>
                 <motion.span className="eyebrow" variants={fadeUp}>
                     Kontakt
                 </motion.span>

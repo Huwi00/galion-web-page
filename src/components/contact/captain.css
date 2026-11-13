@@ -1,0 +1,99 @@
+.captain-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.captain {
+  width: 170px;
+  height: 170px;
+  overflow: visible;
+}
+
+.captain-body {
+  animation: captain-bob 4s ease-in-out infinite;
+}
+
+.captain-head {
+  transform-origin: 100px 150px;
+  animation: captain-nod 6s ease-in-out infinite;
+}
+
+.captain-eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: captain-blink 5s infinite;
+}
+
+.captain-pipe {
+  transform-origin: 108px 123px;
+  animation: captain-puff 3s ease-in-out infinite;
+}
+
+.captain-ember {
+  animation: captain-glow 3s ease-in-out infinite;
+}
+
+.captain-smoke circle {
+  fill: #b9c2cc;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: captain-smoke 3s ease-out infinite;
+}
+
+.captain-smoke circle:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.captain-smoke circle:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes captain-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes captain-nod {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes captain-blink {
+  0%, 46%, 50%, 100% { transform: scaleY(1); }
+  48% { transform: scaleY(0.1); }
+}
+
+@keyframes captain-puff {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-4deg); }
+}
+
+@keyframes captain-glow {
+  0%, 100% { fill: #b8501c; }
+  50% { fill: #ff9a3c; }
+}
+
+@keyframes captain-smoke {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  15% { opacity: 0.75; }
+  100% { opacity: 0; transform: translate(14px, -70px) scale(2.2); }
+}
+
+@media (max-width: 560px) {
+  .captain {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .captain *,
+  .captain-smoke circle {
+    animation: none;
+  }
+  .captain-smoke circle {
+    opacity: 0.5;
+  }
+}
